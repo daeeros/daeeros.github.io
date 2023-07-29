@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromium Metrostroi</title>
+    <style>
+        body {
+            background-color: rgb(38, 38, 38);
+            background-image: url("");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const image_urls = ["https://steamuserimages-a.akamaihd.net/ugc/1740099129541706537/C03609B585C140DD71FCDE35E8989989BC9732CC/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true",
+                        "https://i.ytimg.com/vi/eg99NX3LMUA/maxresdefault.jpg"];
+    
+    let currentImageIndex = 0;
+    let body = document.getElementsByTagName('body')[0];
+    function changeBackgroundImage() {
+        currentImageIndex = (currentImageIndex + 1) % image_urls.length;
+        body.style.backgroundImage = 'url(' + image_urls[currentImageIndex]; + ')';
+        console.log(image_urls[currentImageIndex]);
+    }
+
+    // Таймер смены раз в 5 сек
+    setInterval(changeBackgroundImage, 3000);
+</script>
+</body>
+</html>
